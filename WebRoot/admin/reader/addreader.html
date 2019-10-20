@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style type="text/css">
+        body {
+            background: coral;
+        }
+
+
+
+        #a {
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 1em;
+        }
+
+    </style>
+    <script type="text/javascript">
+        function login() {
+            if (form.name.value == '') {
+                alert('用户名不能为空！');
+                form.name.focus();
+                return false;
+            }
+            if (form.pw.value == '') {
+                alert('密码不能为空！');
+                form.pw.focus();
+                return false;
+            }
+            if (form.pw1.value == '') {
+                alert('密码不能为空！');
+                form.pw1.focus();
+                return false;
+            }
+            if (form.pw1.value == '') {
+                alert('密码不能为空！');
+                form.pw1.focus();
+                return false;
+            }
+            if (form.tel.value == '') {
+                alert('联系电话不能为空！');
+                form.tel.focus();
+                return false;
+            }
+            if (form.tel.value.length < 8 || form.tel.value.length > 11) {
+                alert('联系电话大于8位小于12位！');
+                form.tel.focus();
+                return false;
+            }
+            if (form.pw.value.length < 6 || form.pw.value.length > 12) {
+                alert('密码大于6位小于12位！');
+                form.pw1.focus();
+                return false;
+            }
+            if (form.pw.value != form.pw1.value) {
+                alert('你两次输入的密码不一致，请重新输入！');
+                form.pw1.focus();
+                return false;
+            }
+            return true;
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <div id="a">
+        <div id="a1">
+            <form action="addreader1.jsp" metood="post" onsubmit="return login(form);" name="form">
+                姓名： <input type="text" name="name" id="name"><br>
+                联系电话: <input type="text" name="tel" id="tel"><br>
+                性别： <input type="radio" name="sex" value="男" checked>
+                男 <input type="radio" name="sex" value="女">女<br>
+                密码： <input type="password" name="pw" id="pw"><br>
+                确认密码： <input type="password" name="pw1" id="pw1"><br>
+                <input type="submit" value="添加">
+                <input type="reset" value="重置">
+
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
